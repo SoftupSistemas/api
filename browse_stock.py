@@ -21,6 +21,9 @@ url_request = "https://www.sistemagestaoonline.com.br/sistema/rest/api_sgo.wscon
 # definindo produto referencia 
 produtoReferencia = "123"
 
+# montando header
+header = {'Content-type': 'application/json'}
+
 # definindo chave de acesso 
 chaveAcesso = "et53r4g934j90tj39gjhy93jy39jg93=gb"
   
@@ -29,7 +32,7 @@ data = {'Chave':chaveAcesso,
         'ProdutoReferencia':produtoReferencia} 
   
 # fazendo requisição POST
-r = requests.post(url = url_request, data = data) 
+r = requests.post(url = url_request, data = data, headers = header) 
   
 # extracting data in json format 
 data = r.json() 
